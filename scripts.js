@@ -1,15 +1,21 @@
 const submitBtn = document.querySelector("#submit-btn");
 const movieTitle = document.querySelector("#movie-title");
+const movieList = document.querySelector("#movie-list");
 
-let movieList = [];
+let movieArray = [];
 
 // This function logs what the user types into the text box when submit button is clicked
 const addMovie = () => {
 	let nameOfMovie = movieTitle.value;
-	movieList.push(nameOfMovie);
+	movieArray.push(nameOfMovie);
+
+	// Create div, add name of user typed movie into div, append to movie list in HTML
+	const newDiv = document.createElement("div");
+	newDiv.textContent = nameOfMovie;
+	movieList.appendChild(newDiv);
 
 	console.log(`users input is ${nameOfMovie}`);
-	console.log(movieList);
+	console.log(movieArray);
 
 	// movieFetch() function
 };
