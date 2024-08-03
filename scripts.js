@@ -2,6 +2,18 @@ const submitBtn = document.querySelector("#submit-btn");
 const movieTitle = document.querySelector("#movie-title");
 const movieList = document.querySelector("#movie-list");
 
+async function fetchData() {
+	const url = "https://catfact.ninja/fact";
+	try {
+		const response = await fetch(url);
+		const json = await response.json();
+		console.log(json);
+	} catch (error) {
+		console.log("Error fetching data", error.messsage);
+	}
+}
+fetchData();
+
 let movieArray = [];
 
 // This function logs what the user types into the text box when submit button is clicked
@@ -31,3 +43,5 @@ submitBtn.addEventListener("click", (e) => {
 	console.log("clicked");
 	addMovie();
 });
+
+// Key: aedba6c69f13f4a09bb49000c0e86cde
