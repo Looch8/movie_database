@@ -1,0 +1,9 @@
+#movie-list {
+	border: solid 1px black;
+	text-align: center;
+	padding: 10px;
+}
+
+.deleteButton {
+	margin-bottom: 15px;
+}
