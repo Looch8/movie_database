@@ -21,20 +21,25 @@ const addMovie = () => {
 	let nameOfMovie = movieTitle.value;
 	movieArray.push(nameOfMovie);
 
-	// Create div, add name of user typed movie into div, append to movie list in HTML
-	const newDiv = document.createElement("div");
-	newDiv.textContent = nameOfMovie;
-	movieList.appendChild(newDiv);
+	// add delete button to movie
+	if (nameOfMovie !== "") {
+		// Create div, add name of user typed movie into div, append to movie list in HTML
+		const newDiv = document.createElement("div");
+		newDiv.textContent = nameOfMovie;
+		movieList.appendChild(newDiv);
+
+		// Add Button
+		const newButton = document.createElement("button");
+		newButton.textContent = "Delete";
+		newButton.className = "deleteButton";
+		movieList.appendChild(newButton);
+	}
 
 	console.log(`users input is ${nameOfMovie}`);
 	console.log(movieArray);
-
-	// movieFetch() function
 };
 
 // Function to fetch movie data
-
-// const deleteMovie
 
 // logic for handling user clicking on submit button
 submitBtn.addEventListener("click", (e) => {
@@ -42,6 +47,13 @@ submitBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 	console.log("clicked");
 	addMovie();
+	// DeleteMovie();
+});
+
+// Logic for handling delete movie event
+deleteButton.addEventListener("click", (e) => {
+	e.preventDefault();
+	console.log("clicked");
 });
 
 // Key: aedba6c69f13f4a09bb49000c0e86cde
